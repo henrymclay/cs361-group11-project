@@ -20,13 +20,13 @@ Customer
 Emmanuel Rovirosa
 {% endhighlight %}
 
-Browse the project artifacts in the links below: 
-[Requirements Gathering][reqs]
-[UX][ux]
-[Architecture][arch]
-[UML & Design Patters][uml]
+Browse the project artifacts in the links below:  
+[Requirements Gathering][reqs]  
+[UX][ux]  
+[Architecture][arch]  
+[UML & Design Patters][uml]  
 
-[reqs]: {{ site.baseurl }}/static/cs361-group11-portfolio/Group11_Homework1.pdf
-[ux]: {{ site.baseurl }}/cs361-group11-portfolio/static/Group11_Homework2.pdf 
-[arch]: {{ site.baseurl }}/cs361-group11-portfolio/static/Group11_Homework3.pdf
-[uml]: {{ site.baseurl }}/cs361-group11-portfolio/static/Group11_Homework4.pdf
+[reqs]: {{ site.baseurl }}/static/Group11_Homework1.pdf
+[ux]: {{ site.baseurl }}/static/Group11_Homework2.pdf 
+[arch]: {{ site.baseurl }}/static/Group11_Homework3.pdf
+[uml]: {{ site.baseurl }}/static/Group11_Homework4.pdf
