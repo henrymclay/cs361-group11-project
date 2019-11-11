@@ -29,7 +29,7 @@ Browse the project artifacts in the links below:
 [Requirements Gathering][reqs]  
 [UX][ux]  
 [Architecture][arch]  
-[UML & Design Patters][uml]  
+[UML & Design Patterns][uml]  
 
 [reqs]: {{ site.baseurl }}/static/Group11_Homework1.pdf
 [ux]: {{ site.baseurl }}/static/Group11_Homework2.pdf 
