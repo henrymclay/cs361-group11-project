@@ -19,8 +19,11 @@ Pavan Thakkar
 Customer 
 Emmanuel Rovirosa
 {% endhighlight %}
-
+  
+  
 ![Sample Use Case]({{ site.baseurl }}/static/use-case.png)
+  
+  
 
 Browse the project artifacts in the links below:  
 [Requirements Gathering][reqs]  
