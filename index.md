@@ -6,7 +6,7 @@ layout: home
 title:  "Portfolio"
 ---
 
-Project: Pill Dispenser & Reminder
+## Project: Pill Dispenser & Reminder
 
 {% highlight ruby %}
 Group 11
