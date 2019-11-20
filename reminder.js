@@ -4,18 +4,29 @@
 // Assignment: OS Project
 // Comments: Modified from a personal site which was modified from
 // 290 and 325 projects. Does Node things w/ js. uses json to write
-// dynamic html. Javacriptin' on the net like it's '98. Loves it. 
+// dynamic html. Javacriptin' on the net like it's '98. Loves it.
 /////////////////////////////////////////////////////////////////////
 
 var express = require('express');
-
-
+var path = require('path');
+var bodyParser = require("body-parser");
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
+var mysql = require('./dbcon.js');
+
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
+var handlebars = require('express-handlebars').create({defaultLayout:'main'});
+
 app.set('port', 44); // a port for serving the site
 
 app.use(express.static('public')); // for static resources
