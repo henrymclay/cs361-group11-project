@@ -148,4 +148,4 @@ Desktop.ini
 ######################
 # MAC garbage
 # ####################
-*.DS_STORE
+#*.DS_STORE
