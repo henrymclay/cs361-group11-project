@@ -66,39 +66,21 @@ paths:
           description: "Medication not found"
         405:
           description: "Validation exception"
-  /medication/findByName/{name}:
+  /medication/getByPatientId/{patient_id}:
     get:
       tags:
       - "medication"
       summary: "Returns Medication Data for Any Medication in the System"
       description: "Muliple names can be provided with comma separated strings. Use med1, med2, med3 for testing."
-      operationId: "findMedsByName"
+      operationId: "getByPatientId"
       produces:
       - "application/json"
       parameters:
-      - name: "name"
+      - name: "patient_id"
         in: "path"
-        description: "The name that needs to be fetched. Use user1 for testing. "
+        description: "The patient whose medication list needs to be fetched."
         required: true
-        type: "string"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Medication"
-        400:
-          description: "Invalid name"
-  /medication/getAll:
-    get:
-      tags:
-      - "medication"
-      summary: "Returns List of All Medications in the System"
-      description: "Returns array of string"
-      operationId: "GetMeds"
-      produces:
-      - "application/json"
+        type: "integer"
       responses:
         200:
           description: "successful operation"
@@ -119,11 +101,9 @@ definitions:
     properties:
       id:
         type: "integer"
-        format: "int64"
         example: "1"
       patient_id:
         type: "integer"
-        format: "int64"
         example: "1"
       name:
         type: "string"
