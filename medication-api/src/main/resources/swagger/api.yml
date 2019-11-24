@@ -112,15 +112,26 @@ definitions:
   Medication:
     type: "object"
     required:
+    - "id"
+    - "patient_id"
     - "name"
-    - "nih-url"
+    - "dose_date"
     properties:
       id:
         type: "integer"
         format: "int64"
+        example: "1"
+      patient_id:
+        type: "integer"
+        format: "int64"
+        example: "1"
       name:
         type: "string"
         example: "acetaminophen"
+      dose_date:
+        type: "string"
+        format: "date-time"
+        example: "2017-07-21T17:32:28Z"
       nih-url:
         type: "string"
         example: "https://druginfo.nlm.nih.gov/drugportal/name/acetaminophen"
@@ -131,13 +142,6 @@ definitions:
           example: 
             - "ethanol"
             - "sodium nitrite"
-      status:
-        type: "string"
-        description: "supply in dispenser"
-        enum:
-        - "available"
-        - "short"
-        - "out"
 externalDocs:
   description: "Check out the project portfolio"
   url: "https://bocaletm.github.io/cs361-group11-project/"

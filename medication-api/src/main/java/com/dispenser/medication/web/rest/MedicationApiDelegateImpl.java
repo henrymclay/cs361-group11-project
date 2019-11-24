@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.List;
 import java.util.ArrayList;
 import java.net.URI;
+import java.time.LocalDate;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -34,9 +35,12 @@ public class MedicationApiDelegateImpl implements MedicationApiDelegate {
       List<String> contraindications = new ArrayList<>();
       Medication medication = new Medication();
       medication.setContraindications(contraindications);
-      Long id = 0L;
+      Long id = 1L;
+      Long patient_id = 1L;
+
       medication.setId(id);
-      medication.setName("acetaminophen");
+      medication.setPatientId(patient_id);
+      medication.setName("Acetaminophen");
       medication.setNihUrl("https://druginfo.nlm.nih.gov/drugportal/name/acetaminophen");
       medication.setStatus(Medication.StatusEnum.AVAILABLE);
       List<Medication> medicationList = new ArrayList<>();
