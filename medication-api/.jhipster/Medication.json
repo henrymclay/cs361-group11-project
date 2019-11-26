@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "patient_id",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "unique",
+                "min"
+            ],
+            "fieldValidateRulesMin": "1"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dose_date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nihurl",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "contraindications",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20191126215137",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "medication",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}
