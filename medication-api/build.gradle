@@ -213,6 +213,7 @@ dependencies {
     implementation "org.apache.commons:commons-lang3"
     implementation "commons-io:commons-io"
     implementation "javax.transaction:javax.transaction-api"
+    compile group: 'javax.inject', name: 'javax.inject', version: '1'
     implementation "org.hibernate:hibernate-entitymanager"
     implementation "org.hibernate.validator:hibernate-validator"
     implementation "org.liquibase:liquibase-core"
