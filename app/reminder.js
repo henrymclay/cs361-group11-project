@@ -1,10 +1,9 @@
 /////////////////////////////////////////////////////////////////////
 // Name: Group 11 / Henry Clay
 // Date: 11/19
-// Assignment: OS Project
-// Comments: Modified from a personal site which was modified from
-// 290 and 325 projects. Does Node things w/ js. uses json to write
-// dynamic html. Javacriptin' on the net like it's '98. Loves it.
+// Assignment: SE1 Project
+// Comments: Runner for the reminder app based on projects from 290
+// and 325. Uses Node to serve an express / handlebars page. 
 /////////////////////////////////////////////////////////////////////
 
 var express = require('express');
