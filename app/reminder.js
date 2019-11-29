@@ -33,10 +33,32 @@ app.use(express.static('public')); // for static resources
 
 app.get('/' , function(req, res) {
   res.render('home', {'home' : true});
+  // static page, should be good?
 });
 
 app.get('/calendar' , function(req, res) {
-  res.render('home', {'home' : true});
+  res.render('calendar', {'calendar' : true});
+  // static page, should be good?
+});
+
+app.get('/notifications' , function(req, res) {
+  res.render('notifications', {'notifications' : true});
+  // static page, should be good?
+});
+
+app.get('/patient' , function(req, res) {
+  res.render('patient', {'patient' : true});
+  // needs patient script
+});
+
+app.get('/records' , function(req, res) {
+  res.render('records', {'records' : true});
+  // needs record script
+});
+
+app.get('/settings' , function(req, res) {
+  res.render('settings', {'settings' : true});
+  // static page, should be good?
 });
 
 app.get('/events/:eventId' , function(req, res) {
@@ -86,15 +108,18 @@ app.get('/events/:eventId' , function(req, res) {
 
 app.get('/about/' , function(req, res) {
   res.render('about', {'about' : true});
+  // static page, should be good?
 });
 
 app.get('/acknowledge/' , function(req, res) {
   res.render('acknowledge', {'acknowledge' : true});
+  // static page, should be good?
 });
 
 app.use(function(req,res){
   res.status(404);
   res.render('404');
+  // static page, should be good?
 });
 
 app.use(function(err, req, res, next){
@@ -102,6 +127,7 @@ app.use(function(err, req, res, next){
   res.type('plain/text');
   res.status(500);
   res.render('500');
+  // static page, should be good?
 });
 
 app.listen(app.get('port'), function(){
