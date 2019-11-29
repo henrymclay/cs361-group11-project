@@ -148,3 +148,10 @@ Desktop.ini
 # MAC garbage
 # ####################
 #*.DS_STORE
+
+###################
+# mystery stuff???
+###################
+.prettierignore
+.editiorconfig
+.prettierrc

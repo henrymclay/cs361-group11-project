@@ -35,6 +35,10 @@ app.get('/' , function(req, res) {
   res.render('home', {'home' : true});
 });
 
+app.get('/calendar' , function(req, res) {
+  res.render('home', {'home' : true});
+});
+
 app.get('/events/:eventId' , function(req, res) {
 // this isn't gonna apply for the current project but it's a syntax example
 // below vars are json examples - we can work from there! 
