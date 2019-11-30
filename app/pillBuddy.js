@@ -85,7 +85,7 @@ var pat6 = {
 	"id": "p435fjh32"
 }
 
-var patientsJSON = [
+var recordsJSON = [
 	pat1, pat2, pat3, pat4, pat5, pat6
 ]
 
@@ -351,6 +351,11 @@ app.get('/' , function(req, res) {
   // static page, should be good?
 });
 
+app.get('/home' , function(req, res) {
+  res.render('home', {'home' : true});
+  // static page, should be good?
+});
+
 app.get('/calendar' , function(req, res) {
   res.render('calendar', {'calendar' : true});
   // static page, should be good?
@@ -365,7 +370,7 @@ app.get('/patient/:patientID' , function(req, res) {
   var context = {};
   context.results = medInfoJSON;
   context.patient = patientSolo;
-  res.render(patient, context); 
+  res.render('patient', context); 
 
 });
 
@@ -379,7 +384,7 @@ app.get('/records' , function(req, res) {
   // gets the patient list and then passes it to handlebars to build the page
   var context = {};
   context.results=recordsJSON;
-  res.render(records, context); 
+  res.render('records', context); 
 
 });
 
