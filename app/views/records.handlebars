@@ -14,9 +14,9 @@
                 {{#each results}}
                   <tr id="patient">
                     <td>{{this.id}}</td>
-                    <td>{{this.fname}}</td>
-                    <td>{{this.lname}}</td>
-					<td><img class="tblIcons" src="/images/fwdIcon.png" href="/patient/{{this.id}}"></td>
+                    <td>{{this.firstName}}</td>
+                    <td>{{this.lastName}}</td>
+					<td><a href="/patient/{{this.id}}"><img class="tblIcons" src="/images/fwdIcon.png" ></td></a></td>
                   </tr>
                 {{/each}}
               {{/if}}
