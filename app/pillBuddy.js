@@ -12,7 +12,7 @@ var bodyParser = require("body-parser");
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
-var mysql = require('./dbcon.js');
+//var mysql = require('./dbcon.js'); // not used YET!
 
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -362,7 +362,7 @@ app.get('/notifications' , function(req, res) {
 });
 
 app.get('/patient/:patientID' , function(req, res) {
-  
+  var context = {};
   context.results = medInfoJSON;
   context.patient = patientSolo;
   res.render(patient, context); 
@@ -377,6 +377,7 @@ app.get('/patient/:patientID' , function(req, res) {
 
 app.get('/records' , function(req, res) {
   // gets the patient list and then passes it to handlebars to build the page
+  var context = {};
   context.results=recordsJSON;
   res.render(records, context); 
 
