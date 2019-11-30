@@ -386,11 +386,13 @@ app.get('/patient/:patientID' , function(req, res) {
   sortID = req.params.patientID;
   // iterates through all JSON for medication doses and pushes
   // those with matching patID into context.results
-  for (var doseInstance in medInfoJSON)
+  console.log("SortID = "+ sortID); 
+  for (var i in medInfoJSON)
   {
-    if (doseInstance.patId == sortID)
+    if (medInfoJSON[i].patId == sortID)
     {
-      context.results.push(doseInstance);
+      context.results.push(medInfoJSON[i]);
+      console.log("pushing... " + i); 
     }
   } 
   // renders it 
