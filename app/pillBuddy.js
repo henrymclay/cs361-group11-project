@@ -26,6 +26,7 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
+app.set('port', 3607); // a port for serving the site -- debug
 app.set('port', 44); // a port for serving the site
 
 app.use(express.static('public')); // for static resources
@@ -366,7 +367,7 @@ app.get('/notifications' , function(req, res) {
   // static page, should be good?
 });
 
-app.get('/patient/:patientID' , function(req, res) {
+app.get('/patient' , function(req, res) {
   var context = {};
   context.results = medInfoJSON;
   context.patient = patientSolo;
