@@ -11,6 +11,20 @@
 				<th>Filled?</th>
 				<th>Expiration</th>
 			</tr>
+			<tbody>
+				{{#if results}}
+                  {{#each results}}
+					<tr id="patient">
+                	    <td>{{this.id}}</td>
+                	    <td>{{this.dose}}</td>
+                	    <td>{{this.medication}}</td>
+						<td>{{this.time}}</td>
+						<td>{{this.fill}}"></td>
+                	    <td>{{this.date}}</td>
+					</tr>
+					{{/each}}
+              	{{/if}}
+			</tbody>
 		</table>
 	</div>
 </div>

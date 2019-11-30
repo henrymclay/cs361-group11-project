@@ -30,6 +30,321 @@ app.set('port', 44); // a port for serving the site
 
 app.use(express.static('public')); // for static resources
 
+////////////////////////////////////////////////////////////////////////////////////
+// records script section
+// some redundant code from pre-conversion records.js
+////////////////////////////////////////////////////////////////////////////////////
+
+
+/* Initializing all of the variables for the records pages */
+// array not used here, just for records
+var patients = [
+	["aw3ks35d2","Bland","Kelly"],
+	["bd9s3nm32","Williams","Lana"],
+	["me983hc29","Kent","Tom"],
+	["jor921w2n","Smith","Don"],
+	["ut3923fj9","Jones","Sally"],
+	["p435fjh32","Nord","Lance"]
+];
+
+// json below should be the same data as the above array
+
+var pat1 = {
+	"firstName": "Kelly",
+	"lastName": "Bland",
+	"id": "aw3ks35d2"
+}
+
+var pat2 = {
+	"firstName": "Lana",
+	"lastName": "Williams",
+	"id": "bd9s3nm32"
+}
+
+var pat3 = {
+	"firstName": "Tom",
+	"lastName": "Kent",
+	"id": "me983hc29"
+}
+
+var pat4 = {
+	"firstName": "Don",
+	"lastName": "Smith",
+	"id": "jor921w2n"
+}
+
+var pat5 = {
+	"firstName": "Sally",
+	"lastName": "Jones",
+	"id": "ut3923fj9"
+}
+
+var pat6 = {
+	"firstName": "Lance",
+	"lastName": "Nord",
+	"id": "p435fjh32"
+}
+
+var patientsJSON = [
+	pat1, pat2, pat3, pat4, pat5, pat6
+]
+
+//patientsJSON.forEach(patListGenJSON); 
+
+/* Initialization of patients list */
+
+// leaving for posterity but this should be covered w/ handlebars
+/*
+function patListGen(item) {
+	var table = document.getElementById("patList");
+  var row = table.insertRow(1);
+  */
+  // iterates through 3 part array
+  /*
+  for(i=0;i<3;i++) {
+		var cell = row.insertCell(i);
+		cell.innerHTML=item[i];
+  }
+  */
+
+  // these break out above w/ JSON access
+  /*
+  var idCell = row.insertCell(0);
+  idCell.innerHTML = item.id;
+
+  var fNameCell = row.insertCell(1);
+  fNameCell.innterHTML = item.firstName;
+
+  var lNameCell = row.insertCell(2);
+  lNameCell.innerHTML = item.lastName;
+  */
+  // no i... so needed to hardcode the 3
+  /*
+	var finalCell = row.insertCell(3);
+	var a = document.createElement("A");
+	var img = document.createElement('img');
+  
+  img.src = "fwdIcon.png";
+  img.className="tblIcons";
+  a.setAttribute("href","patient.html");
+  a.appendChild(img);
+  finalCell.appendChild(a);
+  
+}
+*/
+////////////////////////////////////////////////////////////////////////////////////
+// patient script section
+// some redundant code from pre-conversion patient.js
+////////////////////////////////////////////////////////////////////////////////////
+
+/* Initializing all of the variables for the records pages */
+/*
+var medication = [
+	["aw3ks35d2","100mg","Aspirin","08:04","1","01/01/2020"],
+	["aw3ks35d2","100mg","Aspirin","13:04","1","01/01/2020"],
+	["aw3ks35d2","100mg","Aspirin","18:04","1","01/01/2020"],
+	["bd9s3nm32","50mg","Penicilin","09:31","0","12/01/2019"],
+	["me983hc29","200mg","Lisinoprol","11:15","1","12/12/2019"],
+	["me983hc29","200mg","Ibuprofen","12:31","1","03/01/2020"],
+	["jor921w2n","50mg","Amoxicillin","06:10","1","11/29/2019"],
+	["jor921w2n","50mg","Amoxicillin","10:10","1","11/29/2019"],
+	["jor921w2n","50mg","Amoxicillin","14:10","1","11/29/2019"],
+	["jor921w2n","50mg","Amoxicillin","18:10","1","11/29/2019"],
+	["ut3923fj9","200mg","Aspirin","","0","12/22/2019"],
+	["ut3923fj9","200mg","Aspirin","","0","12/22/2019"],
+	["p435fjh32","100mg","Ibuprofen","","0","2/2/2020"],
+	["p435fjh32","100mg","Ibuprofen","","0","2/2/2020"],
+	["p435fjh32","100mg","Ibuprofen","","0","2/2/2020"]
+];
+*/
+var dose1 = {
+  "id"         :  "aw3ks35d2",
+  "dose"       :  "100mg",
+  "medication" :  "Aspirin",
+  "time"       :  "08:04",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "01/01/2020"
+}
+
+var dose2 = {
+  "id"         :  "aw3ks35d2",
+  "dose"       :  "100mg",
+  "medication" :  "Aspirin",
+  "time"       :  "13:04",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "01/01/2020"
+}
+
+var dose3 = {
+  "id"         :  "aw3ks35d2",
+  "dose"       :  "100mg",
+  "medication" :  "Aspirin",
+  "time"       :  "18:04",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "01/01/2020"
+}
+
+var dose4 = {
+  "id"         :  "bd9s3nm32",
+  "dose"       :  "50mg",
+  "medication" :  "Penicilin",
+  "time"       :  "09:31",
+  "fill"       :  "0",
+  "date"       :  "12/01/2019"
+}
+
+var dose5 = {
+  "id"         :  "me983hc29",
+  "dose"       :  "200mg",
+  "medication" :  "Lisinoprol",
+  "time"       :  "11:15",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "12/12/2019"
+}
+
+var dose6 = {
+  "id"         :  "me983hc29",
+  "dose"       :  "200mg",
+  "medication" :  "Lisinoprol",
+  "time"       :  "12:31",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "03/01/2020"
+}
+
+var dose7 = {
+  "id"         :  "jor921w2n",
+  "dose"       :  "50mg",
+  "medication" :  "Amoxicillin",
+  "time"       :  "06:10",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "11/29/2019"
+}
+
+var dose8 = {
+  "id"         :  "jor921w2n",
+  "dose"       :  "50mg",
+  "medication" :  "Amoxicillin",
+  "time"       :  "10:10",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "11/29/2019"
+}
+
+var dose9 = {
+  "id"         :  "jor921w2n",
+  "dose"       :  "50mg",
+  "medication" :  "Amoxicillin",
+  "time"       :  "14:10",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "11/29/2019"
+}
+
+var dose10 = {
+  "id"         :  "jor921w2n",
+  "dose"       :  "50mg",
+  "medication" :  "Amoxicillin",
+  "time"       :  "18:10",
+  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "date"       :  "11/29/2019"
+}
+
+var dose11 = {
+  "id"         :  "ut3923fj9",
+  "dose"       :  "200mg",
+  "medication" :  "Aspirin",
+  "time"       :  "",
+  "fill"       :  "",
+  "date"       :  "12/22/2019"
+}
+
+var dose12 = {
+  "id"         :  "ut3923fj9",
+  "dose"       :  "200mg",
+  "medication" :  "Aspirin",
+  "time"       :  "",
+  "fill"       :  "",
+  "date"       :  "12/22/2019"
+}
+
+var dose13 = {
+  "id"         :  "p435fjh32",
+  "dose"       :  "100mg",
+  "medication" :  "Ibuprofen",
+  "time"       :  "",
+  "fill"       :  "",
+  "date"       :  "2/2/2020"
+}
+
+var dose14 = {
+  "id"         :  "p435fjh32",
+  "dose"       :  "100mg",
+  "medication" :  "Ibuprofen",
+  "time"       :  "",
+  "fill"       :  "",
+  "date"       :  "2/2/2020"
+}
+
+var dose15 = {
+  "id"         :  "p435fjh32",
+  "dose"       :  "100mg",
+  "medication" :  "Ibuprofen",
+  "time"       :  "",
+  "fill"       :  "",
+  "date"       :  "2/2/2020"
+}
+
+medInfoJSON = [dose1, dose2, dose3, dose4, dose5, dose6, dose7, dose8, dose9, dose10, dose11, dose12, dose13, dose14, dose15];
+
+// as before, JSON should match the arrays. Just JSON. 
+
+var patientSolo = {
+  "firstName" : "Kelly",
+  "lastName"  : "Bland",
+  "id"        : "aw3ks35d2"
+}
+
+patInfo();
+medication.forEach(medListGen);
+
+/* Initialization of patient info */
+
+// break into handlebars - figure out how to seperate patient and meds in results
+function patInfo() {
+	var headN = document.getElementById("patName").innerHTML=patient[1]+", "+patient[2];
+	var headI = document.getElementById("patID").innerHTML=" (Patient ID: "+patient[0]+")"
+}
+
+/* Initialization of medication list */
+
+function medListGen(item) {
+	if (patient[0]==item[0]){
+		var table = document.getElementById("medList");
+		var row = table.insertRow(1);
+		for(i=0;i<6;i++) {
+			var cell = row.insertCell(i);
+			if (i==4) {
+				if (item[i]=="1") {
+					var img = document.createElement('img');
+    				img.src = "chkIcon.png";
+    				img.className="tblIcons";
+    				cell.appendChild(img);
+				}
+				else {
+					cell.innerHTML="";
+				}
+			}
+			else{
+				cell.innerHTML=item[i];
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// ROUTES SECTION - ROUTING CODE GOES HERE
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 app.get('/' , function(req, res) {
   res.render('home', {'home' : true});
@@ -46,64 +361,30 @@ app.get('/notifications' , function(req, res) {
   // static page, should be good?
 });
 
-app.get('/patient' , function(req, res) {
-  res.render('patient', {'patient' : true});
-  // needs patient script
+app.get('/patient/:patientID' , function(req, res) {
+  
+  context.results = medInfoJSON;
+  context.patient = patientSolo;
+  res.render(patient, context); 
+
 });
 
+//app.get('/patient/:patientID' , function(req, res) {
+  
+// TO DO
+
+//});
+
 app.get('/records' , function(req, res) {
-  res.render('records', {'records' : true});
-  // needs record script
+  // gets the patient list and then passes it to handlebars to build the page
+  context.results=recordsJSON;
+  res.render(records, context); 
+
 });
 
 app.get('/settings' , function(req, res) {
   res.render('settings', {'settings' : true});
   // static page, should be good?
-});
-
-app.get('/events/:eventId' , function(req, res) {
-// this isn't gonna apply for the current project but it's a syntax example
-// below vars are json examples - we can work from there! 
-// handlebars will let you display html w/ these values from the 
-// dispVer variable below 
-  var ripples = { name     : "Ripples",
-                  photoURL : '/images/ripplesPond.png',
-                  guideURL : '"/ripplesGuide.pdf" download',
-                  bomURL   : 'https://github.com/pichenettes/eurorack/blob/master/ripples/hardware_design/Ripples.xlsx',
-                  buildURL : '/materials/ripples/',
-                  buildDate: "March 22nd 2018",
-                    current:false,
-                      stock: 2,
-                    events: true };
-
-  var x0xheart = { name    : 'x0x Heart',
-                  photoURL : '/images/x0x-heart-panel.jpg',
-                  guideURL : 'http://wiki.openmusiclabs.com/wiki/EuroAdapter',
-                  bomURL   : 'http://wiki.openmusiclabs.com/wiki/EuroAdapter',
-                  buildURL : '/materials/x0xheart/',
-                  buildDate: "TBA",
-                  current:true,
-                      stock: 0,
-                  events: true };
-
-  var benjolin = { name    : "Benjolin",
-                  photoURL : '/images/kweiwenbenj.JPG',
-                  guideURL : 'https://github.com/kweiwen/benjolin/wiki/1.-building-the-module',
-                  bomURL   : 'https://github.com/kweiwen/benjolin/blob/master/bom.xlsx',
-                  buildURL : '/materials/benjolin/',
-                  buildDate: "October 10th 2017",
-                    current:false,
-                      stock: 1,
-                  events: true };
-
-  var build = req.params["eventId"];
-  var dispVer = {};
-
-  if(build == 'ripples') { dispVer = ripples; }
-  else if(build == 'benjolin') { dispVer = benjolin; }
-  else if(build == 'x0xheart') { dispVer = x0xheart; }
-
-  res.render('event', dispVer);
 });
 
 app.get('/about/' , function(req, res) {
