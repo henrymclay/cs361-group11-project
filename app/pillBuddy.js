@@ -3,7 +3,8 @@
 // Date: 11/19
 // Assignment: SE1 Project
 // Comments: Runner for the reminder app based on projects from 290
-// and 325. Uses Node to serve an express / handlebars page. 
+// and 325 (and some personal hacking) 
+// Uses Node to serve an express / handlebars page. 
 /////////////////////////////////////////////////////////////////////
 
 var express = require('express');
@@ -26,8 +27,9 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
-app.set('port', 3607); // a port for serving the site -- debug
+
 app.set('port', 44); // a port for serving the site
+app.set('port', 3607); // a port for serving the site -- debug
 
 app.use(express.static('public')); // for static resources
 
@@ -367,19 +369,33 @@ app.get('/notifications' , function(req, res) {
   // static page, should be good?
 });
 
-app.get('/patient' , function(req, res) {
+app.get('/patients' , function(req, res) {
   var context = {};
+  // just displays some static JSON - all medications saved
   context.results = medInfoJSON;
   context.patient = patientSolo;
   res.render('patient', context); 
 
 });
 
-//app.get('/patient/:patientID' , function(req, res) {
-  
-// TO DO
-
-//});
+app.get('/patient/:patientID' , function(req, res) {
+  var context = {};
+  context.patient = patientSolo; // not needed?
+  context.results = [];
+  // context is a JSON object w/ a results array
+  sortID = req.params.patientID;
+  // iterates through all JSON for medication doses and pushes
+  // those with matching patID into context.results
+  for (var doseInstance in medInfoJSON)
+  {
+    if (doseInstance.patId == sortID)
+    {
+      context.results.push(doseInstance);
+    }
+  } 
+  // renders it 
+  res.render('patient', context);
+});
 
 app.get('/records' , function(req, res) {
   // gets the patient list and then passes it to handlebars to build the page
