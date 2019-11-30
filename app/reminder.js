@@ -158,7 +158,7 @@ var medication = [
 ];
 */
 var dose1 = {
-  "id"         :  "aw3ks35d2",
+  "pat_id"         :  "aw3ks35d2",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "08:04",
@@ -167,7 +167,7 @@ var dose1 = {
 }
 
 var dose2 = {
-  "id"         :  "aw3ks35d2",
+  "pat_id"         :  "aw3ks35d2",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "13:04",
@@ -176,7 +176,7 @@ var dose2 = {
 }
 
 var dose3 = {
-  "id"         :  "aw3ks35d2",
+  "pat_id"         :  "aw3ks35d2",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "18:04",
@@ -185,7 +185,7 @@ var dose3 = {
 }
 
 var dose4 = {
-  "id"         :  "bd9s3nm32",
+  "pat_id"         :  "bd9s3nm32",
   "dose"       :  "50mg",
   "medication" :  "Penicilin",
   "time"       :  "09:31",
@@ -194,7 +194,7 @@ var dose4 = {
 }
 
 var dose5 = {
-  "id"         :  "me983hc29",
+  "pat_id"         :  "me983hc29",
   "dose"       :  "200mg",
   "medication" :  "Lisinoprol",
   "time"       :  "11:15",
@@ -203,16 +203,16 @@ var dose5 = {
 }
 
 var dose6 = {
-  "id"         :  "me983hc29",
+  "pat_id"     :  "me983hc29",
   "dose"       :  "200mg",
-  "medication" :  "Lisinoprol",
+  "medication" :  "Ibuprofen",
   "time"       :  "12:31",
   "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
   "date"       :  "03/01/2020"
 }
 
 var dose7 = {
-  "id"         :  "jor921w2n",
+  "pat_id"     :  "jor921w2n",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "06:10",
@@ -221,7 +221,7 @@ var dose7 = {
 }
 
 var dose8 = {
-  "id"         :  "jor921w2n",
+  "pat_id"     :  "jor921w2n",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "10:10",
@@ -230,7 +230,7 @@ var dose8 = {
 }
 
 var dose9 = {
-  "id"         :  "jor921w2n",
+  "pat_id"     :  "jor921w2n",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "14:10",
@@ -239,7 +239,7 @@ var dose9 = {
 }
 
 var dose10 = {
-  "id"         :  "jor921w2n",
+  "pat_id"     :  "jor921w2n",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "18:10",
@@ -248,7 +248,7 @@ var dose10 = {
 }
 
 var dose11 = {
-  "id"         :  "ut3923fj9",
+  "pat_id"     :  "ut3923fj9",
   "dose"       :  "200mg",
   "medication" :  "Aspirin",
   "time"       :  "",
@@ -257,7 +257,7 @@ var dose11 = {
 }
 
 var dose12 = {
-  "id"         :  "ut3923fj9",
+  "pat_id"         :  "ut3923fj9",
   "dose"       :  "200mg",
   "medication" :  "Aspirin",
   "time"       :  "",
@@ -266,7 +266,7 @@ var dose12 = {
 }
 
 var dose13 = {
-  "id"         :  "p435fjh32",
+  "pat_id"     :  "p435fjh32",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
@@ -275,7 +275,7 @@ var dose13 = {
 }
 
 var dose14 = {
-  "id"         :  "p435fjh32",
+  "pat_id"     :  "p435fjh32",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
@@ -284,7 +284,7 @@ var dose14 = {
 }
 
 var dose15 = {
-  "id"         :  "p435fjh32",
+  "pat_id"     :  "p435fjh32",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
@@ -302,19 +302,19 @@ var patientSolo = {
   "id"        : "aw3ks35d2"
 }
 
-patInfo();
-medication.forEach(medListGen);
+//patInfo();
+//medication.forEach(medListGen);
 
 /* Initialization of patient info */
 
 // break into handlebars - figure out how to seperate patient and meds in results
-function patInfo() {
-	var headN = document.getElementById("patName").innerHTML=patient[1]+", "+patient[2];
-	var headI = document.getElementById("patID").innerHTML=" (Patient ID: "+patient[0]+")"
-}
+//function patInfo() {
+//	var headN = document.getElementById("patName").innerHTML=patient[1]+", "+patient[2];
+//	var headI = document.getElementById("patID").innerHTML=" (Patient ID: "+patient[0]+")"
+//}
 
 /* Initialization of medication list */
-
+/*
 function medListGen(item) {
 	if (patient[0]==item[0]){
 		var table = document.getElementById("medList");
@@ -338,7 +338,7 @@ function medListGen(item) {
 		}
 	}
 }
-
+*/
 //////////////////////////////////////////////////////////////////////////////////
 // ROUTES SECTION - ROUTING CODE GOES HERE
 /////////////////////////////////////////////////////////////////////////////////
