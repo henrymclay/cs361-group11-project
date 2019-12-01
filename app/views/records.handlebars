@@ -1,0 +1,28 @@
+<div id="content" class="content">
+	<h2>Patient Records</h2>
+	<h3>Click the arrow next to any patient to view full patient record</h3>
+	<div>
+		<table id="patList">
+			<tr>
+				<th>Patient ID</th>
+				<th>Last Name</th>
+				<th>First Name</th>
+				<th> </th>
+			</tr>
+			<tbody>
+				{{#if results}}
+                {{#each results}}
+                  <tr id="patient">
+                    <td>{{this.id}}</td>
+                    <td>{{this.lastName}}</td>
+                    <td>{{this.firstName}}</td>
+					<td><a href="/patient/{{this.id}}"><img class="tblIcons" src="/images/fwdIcon.png" ></td></a></td>
+                  </tr>
+                {{/each}}
+              {{/if}}
+			</tbody>
+		</table>
+	</div>
+</div>
+<div>
+</div>

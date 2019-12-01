@@ -1,0 +1,9 @@
+REAMDE for pill buddy app! 
+
+To install the server app, 
+1. first navigate to app and `npm install`
+2. launch temporarily for testing with node pillBuddy.js (port can be set towards 
+the top of the script), from the app folder
+3. Launch more permanently with node_modules/forever/bin/forever start pillBuddy.js 
+- this will keep it going indefinitely! 
+4. Please report all bugs to Group 11 ASAP!
