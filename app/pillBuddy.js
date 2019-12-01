@@ -389,7 +389,8 @@ app.get('/patient/:patientID' , function(req, res) {
   console.log("SortID = "+ sortID); 
   for (var i in medInfoJSON)
   {
-    if (medInfoJSON[i].patId == sortID)
+    console.log("comparing " + medInfoJSON[i].patId )
+    if (medInfoJSON[i].patID == sortID)
     {
       context.results.push(medInfoJSON[i]);
       console.log("pushing... " + i); 
