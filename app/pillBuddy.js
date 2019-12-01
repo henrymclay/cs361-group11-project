@@ -298,13 +298,13 @@ var dose15 = {
 medInfoJSON = [dose1, dose2, dose3, dose4, dose5, dose6, dose7, dose8, dose9, dose10, dose11, dose12, dose13, dose14, dose15];
 
 // as before, JSON should match the arrays. Just JSON. 
-
+/*
 var patientSolo = {
   "firstName" : "Kelly",
   "lastName"  : "Bland",
   "id"        : "aw3ks35d2"
 }
-
+*/
 //patInfo();
 //medication.forEach(medListGen);
 
