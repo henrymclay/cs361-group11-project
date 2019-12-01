@@ -161,7 +161,7 @@ var medication = [
 ];
 */
 var dose1 = {
-  "pat_id"         :  "aw3ks35d2",
+  "patID"         :  "aw3ks35d2",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "08:04",
@@ -170,7 +170,7 @@ var dose1 = {
 }
 
 var dose2 = {
-  "pat_id"         :  "aw3ks35d2",
+  "patID"         :  "aw3ks35d2",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "13:04",
@@ -179,7 +179,7 @@ var dose2 = {
 }
 
 var dose3 = {
-  "pat_id"         :  "aw3ks35d2",
+  "patID"         :  "aw3ks35d2",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "18:04",
@@ -188,7 +188,7 @@ var dose3 = {
 }
 
 var dose4 = {
-  "pat_id"         :  "bd9s3nm32",
+  "patID"         :  "bd9s3nm32",
   "dose"       :  "50mg",
   "medication" :  "Penicilin",
   "time"       :  "09:31",
@@ -197,7 +197,7 @@ var dose4 = {
 }
 
 var dose5 = {
-  "pat_id"         :  "me983hc29",
+  "patID"         :  "me983hc29",
   "dose"       :  "200mg",
   "medication" :  "Lisinoprol",
   "time"       :  "11:15",
@@ -206,7 +206,7 @@ var dose5 = {
 }
 
 var dose6 = {
-  "pat_id"     :  "me983hc29",
+  "patID"     :  "me983hc29",
   "dose"       :  "200mg",
   "medication" :  "Ibuprofen",
   "time"       :  "12:31",
@@ -215,7 +215,7 @@ var dose6 = {
 }
 
 var dose7 = {
-  "pat_id"     :  "jor921w2n",
+  "patID"     :  "jor921w2n",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "06:10",
@@ -224,7 +224,7 @@ var dose7 = {
 }
 
 var dose8 = {
-  "pat_id"     :  "jor921w2n",
+  "patID"     :  "jor921w2n",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "10:10",
@@ -233,7 +233,7 @@ var dose8 = {
 }
 
 var dose9 = {
-  "pat_id"     :  "jor921w2n",
+  "patID"     :  "jor921w2n",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "14:10",
@@ -242,7 +242,7 @@ var dose9 = {
 }
 
 var dose10 = {
-  "pat_id"     :  "jor921w2n",
+  "patID"     :  "jor921w2n",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "18:10",
@@ -251,7 +251,7 @@ var dose10 = {
 }
 
 var dose11 = {
-  "pat_id"     :  "ut3923fj9",
+  "patID"     :  "ut3923fj9",
   "dose"       :  "200mg",
   "medication" :  "Aspirin",
   "time"       :  "",
@@ -260,7 +260,7 @@ var dose11 = {
 }
 
 var dose12 = {
-  "pat_id"         :  "ut3923fj9",
+  "patID"         :  "ut3923fj9",
   "dose"       :  "200mg",
   "medication" :  "Aspirin",
   "time"       :  "",
@@ -269,7 +269,7 @@ var dose12 = {
 }
 
 var dose13 = {
-  "pat_id"     :  "p435fjh32",
+  "patID"     :  "p435fjh32",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
@@ -278,7 +278,7 @@ var dose13 = {
 }
 
 var dose14 = {
-  "pat_id"     :  "p435fjh32",
+  "patID"     :  "p435fjh32",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
@@ -287,7 +287,7 @@ var dose14 = {
 }
 
 var dose15 = {
-  "pat_id"     :  "p435fjh32",
+  "patID"     :  "p435fjh32",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
