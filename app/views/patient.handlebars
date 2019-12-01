@@ -25,6 +25,7 @@
 							{{/if}}
 						</td>
                 	    <td>{{this.date}}</td>
+						<td><input type="button" name= "delete" value="delete" onclick="location.href='patient/{{this.patID}}<!--/delete/{{this.medID}}-->'" /></td>
 					</tr>
 					{{/each}}
               	{{/if}}
@@ -32,6 +33,27 @@
 		</table>
 	</div>
 </div>
+
+<div>
+	<h3>Add Medication Alert</h3>
+        <form id="form1" action="/patients/{{this.patID}}/add" method="post">
+          <div>
+            <label for="medication">Medication Name</label>
+            <input id="medication" name="medication" type="text">
+            <label for="dose">Dosage (mg)</label>
+            <input id="dose" name="dose" type="text">
+            <label for="time">Delivery Time</label>
+            <input id="time" name="time" type="text">
+			<label for="interval">Minutes between Doses</label>
+            <input id="interval" name="interval" type="text">
+            <label for="expiration">Expiration</label>
+            <input id="expiration" name="expiration" type="text">
+            <td><input type="submit" formmethod="post" value="medsubmit" /></td>
+          </div>
+
+        </form>
+</div>
+
 <div>
 	<h3>
 		<a href="/records">
@@ -39,6 +61,4 @@
 		</a>
 		Back to full patient records
 	</h3>
-</div>
-<div>
 </div>

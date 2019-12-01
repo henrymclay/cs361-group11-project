@@ -29,7 +29,7 @@ var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
 
 app.set('port', 44); // a port for serving the site
-app.set('port', 3607); // a port for serving the site -- debug
+//app.set('port', 3607); // a port for serving the site -- debug
 
 app.use(express.static('public')); // for static resources
 
@@ -160,6 +160,10 @@ var medication = [
 	["p435fjh32","100mg","Ibuprofen","","0","2/2/2020"]
 ];
 */
+
+// TODO
+// add med ID for deleting routes 
+
 var dose1 = {
   "patID"         :  "aw3ks35d2",
   "dose"       :  "100mg",
@@ -373,27 +377,26 @@ app.get('/patients' , function(req, res) {
   var context = {};
   // just displays some static JSON - all medications saved
   context.results = medInfoJSON;
-  context.patient = patientSolo;
   res.render('patient', context); 
 
 });
 
 app.get('/patient/:patientID' , function(req, res) {
   var context = {};
-  context.patient = patientSolo; // not needed?
+  //context.patient = patientSolo; // not needed?
   context.results = [];
   // context is a JSON object w/ a results array
   sortID = req.params.patientID;
   // iterates through all JSON for medication doses and pushes
   // those with matching patID into context.results
-  console.log("SortID = "+ sortID); 
+  //console.log("SortID = "+ sortID); 
   for (var i in medInfoJSON)
   {
-    console.log("comparing " + medInfoJSON[i].patId )
+    //console.log("comparing " + medInfoJSON[i].patId )
     if (medInfoJSON[i].patID == sortID)
     {
       context.results.push(medInfoJSON[i]);
-      console.log("pushing... " + i); 
+      //console.log("pushing... " + i); 
     }
   } 
   // renders it 
