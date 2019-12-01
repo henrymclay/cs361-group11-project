@@ -165,7 +165,7 @@ var dose1 = {
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "08:04",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "01/01/2020"
 }
 
@@ -174,7 +174,7 @@ var dose2 = {
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "13:04",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "01/01/2020"
 }
 
@@ -183,7 +183,7 @@ var dose3 = {
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "18:04",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "01/01/2020"
 }
 
@@ -192,7 +192,7 @@ var dose4 = {
   "dose"       :  "50mg",
   "medication" :  "Penicilin",
   "time"       :  "09:31",
-  "fill"       :  "0",
+  "fill"       :  false,
   "date"       :  "12/01/2019"
 }
 
@@ -201,7 +201,7 @@ var dose5 = {
   "dose"       :  "200mg",
   "medication" :  "Lisinoprol",
   "time"       :  "11:15",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "12/12/2019"
 }
 
@@ -210,7 +210,7 @@ var dose6 = {
   "dose"       :  "200mg",
   "medication" :  "Ibuprofen",
   "time"       :  "12:31",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "03/01/2020"
 }
 
@@ -219,7 +219,7 @@ var dose7 = {
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "06:10",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "11/29/2019"
 }
 
@@ -228,7 +228,7 @@ var dose8 = {
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "10:10",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "11/29/2019"
 }
 
@@ -237,7 +237,7 @@ var dose9 = {
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "14:10",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "11/29/2019"
 }
 
@@ -246,7 +246,7 @@ var dose10 = {
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "18:10",
-  "fill"       :  "<img class=\"tblIcons\" src=\"chkIcon.png\">",
+  "fill"       :  true,
   "date"       :  "11/29/2019"
 }
 
@@ -255,7 +255,7 @@ var dose11 = {
   "dose"       :  "200mg",
   "medication" :  "Aspirin",
   "time"       :  "",
-  "fill"       :  "",
+  "fill"       :  false,
   "date"       :  "12/22/2019"
 }
 
@@ -264,7 +264,7 @@ var dose12 = {
   "dose"       :  "200mg",
   "medication" :  "Aspirin",
   "time"       :  "",
-  "fill"       :  "",
+  "fill"       :  false,
   "date"       :  "12/22/2019"
 }
 
@@ -273,7 +273,7 @@ var dose13 = {
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
-  "fill"       :  "",
+  "fill"       :  false,
   "date"       :  "2/2/2020"
 }
 
@@ -282,7 +282,7 @@ var dose14 = {
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
-  "fill"       :  "",
+  "fill"       :  false,
   "date"       :  "2/2/2020"
 }
 
@@ -291,7 +291,7 @@ var dose15 = {
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
-  "fill"       :  "",
+  "fill"       :  false,
   "date"       :  "2/2/2020"
 }
 

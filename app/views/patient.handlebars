@@ -19,7 +19,11 @@
                 	    <td>{{this.dose}}</td>
                 	    <td>{{this.medication}}</td>
 						<td>{{this.time}}</td>
-						<td>{{this.fill}}</td>
+						<td>
+							{{#if this.fill}}
+								<img class="tblIcons" src="chkIcon.png">
+							{{/if}}
+						</td>
                 	    <td>{{this.date}}</td>
 					</tr>
 					{{/each}}
