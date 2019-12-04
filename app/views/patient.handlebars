@@ -15,17 +15,17 @@
 				{{#if results}}
                   {{#each results}}
 					<tr id="patient">
-                	    <!-- <td>{{this.patID}}</td> -->
+                	    <!-- <td>{{this.patient_id}}</td> -->
+                	    <td>{{this.name}}</td>
                 	    <td>{{this.dose}}</td>
-                	    <td>{{this.medication}}</td>
-						<td>{{this.time}}</td>
+						<td>{{this.dose_date}}</td>
 						<td>
 							{{#if this.fill}}
 								<img class="tblIcons" src="/images/chkIcon.png">
 							{{/if}}
 						</td>
-                	    <td>{{this.date}}</td>
-						<td><input type="button" name= "delete" value="delete" onclick="location.href='patient/{{this.patID}}<!--/delete/{{this.medID}}-->'" /></td>
+                	    <td>{{this.dose_date}}</td>
+						<td><input type="button" name= "delete" value="delete" onclick="location.href='patient/{{this.patient_id}}<!--/delete/{{this.id}}-->'" /></td>
 					</tr>
 					{{/each}}
               	{{/if}}

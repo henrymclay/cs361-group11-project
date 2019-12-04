@@ -1,4 +1,24 @@
 /* Initializing all of the variables for the records pages */
+
+var patientList = new Array();
+patientList.push('1'); //TODO: get patient ID from headers if not an admin user
+
+var medication = new Array();
+
+for (patient of patientList) {
+  const Http = new XMLHttpRequest();
+  var url="http://3.228.198.110:8080/v2/medication/getByPatientId/" + patient;
+  Http.open("GET", url);
+  Http.send();
+  Http.onreadystatechange = (e) => {
+    if (this.readyState == 4 && this.status == 200) {
+      medication.push(Http.responseText);
+    } else {
+      console.log("Error fetching patient " + patient + " from /getByPatientId")
+    }
+  }
+}
+/*
 var medication = [
 	["aw3ks35d2","100mg","Aspirin","08:04","1","01/01/2020"],
 	["aw3ks35d2","100mg","Aspirin","13:04","1","01/01/2020"],
@@ -18,6 +38,8 @@ var medication = [
 ];
 
 var patient = ["aw3ks35d2","Bland","Kelly"]
+*/
+var patient = ["1","Bland","Kelly"]
 
 patInfo();
 medication.forEach(medListGen);
