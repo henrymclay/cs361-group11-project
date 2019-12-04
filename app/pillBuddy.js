@@ -6,7 +6,7 @@
 // and 325 (and some personal hacking) 
 // Uses Node to serve an express / handlebars page. 
 /////////////////////////////////////////////////////////////////////
-
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var express = require('express');
 var path = require('path');
 var bodyParser = require("body-parser");
@@ -42,7 +42,7 @@ app.use(express.static('public')); // for static resources
 /* Initializing all of the variables for the records pages */
 // array not used here, just for records
 var patients = [
-	["aw3ks35d2","Bland","Kelly"],
+	["1","Bland","Kelly"],
 	["bd9s3nm32","Williams","Lana"],
 	["me983hc29","Kent","Tom"],
 	["jor921w2n","Smith","Don"],
@@ -55,7 +55,7 @@ var patients = [
 var pat1 = {
 	"firstName": "Kelly",
 	"lastName": "Bland",
-	"id": "aw3ks35d2"
+	"id": "1"
 }
 
 var pat2 = {
@@ -143,9 +143,9 @@ function patListGen(item) {
 /* Initializing all of the variables for the records pages */
 /*
 var medication = [
-	["aw3ks35d2","100mg","Aspirin","08:04","1","01/01/2020"],
-	["aw3ks35d2","100mg","Aspirin","13:04","1","01/01/2020"],
-	["aw3ks35d2","100mg","Aspirin","18:04","1","01/01/2020"],
+	["1","100mg","Aspirin","08:04","1","01/01/2020"],
+	["1","100mg","Aspirin","13:04","1","01/01/2020"],
+	["1","100mg","Aspirin","18:04","1","01/01/2020"],
 	["bd9s3nm32","50mg","Penicilin","09:31","0","12/01/2019"],
 	["me983hc29","200mg","Lisinoprol","11:15","1","12/12/2019"],
 	["me983hc29","200mg","Ibuprofen","12:31","1","03/01/2020"],
@@ -165,7 +165,7 @@ var medication = [
 // add med ID for deleting routes 
 
 var dose1 = {
-  "patID"         :  "aw3ks35d2",
+  "patID"         :  "1",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "08:04",
@@ -174,7 +174,7 @@ var dose1 = {
 }
 
 var dose2 = {
-  "patID"         :  "aw3ks35d2",
+  "patID"         :  "1",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "13:04",
@@ -183,7 +183,7 @@ var dose2 = {
 }
 
 var dose3 = {
-  "patID"         :  "aw3ks35d2",
+  "patID"         :  "1",
   "dose"       :  "100mg",
   "medication" :  "Aspirin",
   "time"       :  "18:04",
@@ -299,14 +299,32 @@ var dose15 = {
   "date"       :  "2/2/2020"
 }
 
-medInfoJSON = [dose1, dose2, dose3, dose4, dose5, dose6, dose7, dose8, dose9, dose10, dose11, dose12, dose13, dose14, dose15];
+//medInfoJSON = [dose1, dose2, dose3, dose4, dose5, dose6, dose7, dose8, dose9, dose10, dose11, dose12, dose13, dose14, dose15];
+var patientList = new Array();
+patientList.push('1'); //TODO: get patient ID from headers if not an admin user
+
+var medInfoJSON = new Array();
+
+for (patient of patientList) {
+  const Http = new XMLHttpRequest();
+  var url="http://3.228.198.110:8080/v2/medication/getByPatientId/" + patient;
+  Http.open("GET", url);
+  Http.send();
+  Http.onreadystatechange = (e) => {
+    if (this.readyState == 4 && this.status == 200) {
+      medication.push(Http.responseText);
+    } else {
+      console.log("Error fetching patient " + patient + " from /getByPatientId")
+    }
+  }
+}
 
 // as before, JSON should match the arrays. Just JSON. 
 /*
 var patientSolo = {
   "firstName" : "Kelly",
   "lastName"  : "Bland",
-  "id"        : "aw3ks35d2"
+  "id"        : "1"
 }
 */
 //patInfo();
