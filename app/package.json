@@ -15,5 +15,5 @@
     "express-session": "^1.11.3",
     "forever": "0.15.3",
     "mysql": "^2.8.0"
-    }
+  }
 }
