@@ -379,10 +379,14 @@ app.get('/patients' , function(req, res) {
 
 });
 
-app.get('/patient/:patientID/add' , function(req, res) {
+app.get('/patient/:patient_id/add' , function(req, res) {
 
   // get JSON from form
   formJSON = req.body;
+
+  formJSON.patientId = req.params.patient_id;
+  form.nihUrl = "";
+  form.contraindictions = "";
 
   respJSON = {}; 
   const Http = new XMLHttpRequest();
@@ -401,15 +405,15 @@ app.get('/patient/:patientID/add' , function(req, res) {
     };
 
 
-  res.redirect('/patient/:patientID');
+  res.redirect('/patient/:patient_id');
 });
 
-app.get('/patient/:patientID' , function(req, res) {
+app.get('/patient/:patient_id' , function(req, res) {
   var context = {};
   //context.patient = patientSolo; // not needed?
   context.results = [];
   // context is a JSON object w/ a results array
-  sortID = req.params.patientID;
+  sortID = req.params.patient_id;
 
   patientList = [];
   patientList.push(sortID); 
