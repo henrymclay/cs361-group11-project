@@ -418,24 +418,26 @@ app.get('/patient/:patient_id' , function(req, res) {
   patientList = [];
   patientList.push(sortID); 
 
+  context.patient_id = sortID; 
+
   var medInfoJSON;
 
-  for (patient of patientList) {
-    const Http = new XMLHttpRequest();
-    var url = MEDICATION_API_URL + "/v2/medication/getByPatientId/" + patient;
-    Http.open("GET", url);
-    Http.send();
-    Http.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        medInfoJSON = JSON.parse(this.responseText);
-        console.log(medInfoJSON);
-        context.results.push(medInfoJSON); 
-      } else {
-        console.log("Error fetching patient " + patient + " from /getByPatientId");
-        console.log(url);
-      }
-    };
-  }
+    for (patient of patientList) {
+      const Http = new XMLHttpRequest();
+      var url = MEDICATION_API_URL + "/v2/medication/getByPatientId/" + patient;
+      Http.open("GET", url);
+      Http.send();
+      Http.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          medInfoJSON = JSON.parse(this.responseText);
+          console.log(medInfoJSON);
+          context.results.push(medInfoJSON); 
+        } else {
+          console.log("Error fetching patient " + patient + " from /getByPatientId");
+          console.log(url);
+        }
+      };
+    }
 
 
   // iterates through all JSON for medication doses and pushes
@@ -453,6 +455,11 @@ app.get('/patient/:patient_id' , function(req, res) {
     }
   } 
   */
+
+  for (var i in medInfoJSON)
+  {
+    context.results.push(medInfoJSON[i]);
+  }
   // renders it 
   res.render('patient', context);
 });
