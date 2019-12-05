@@ -41,15 +41,16 @@ app.use(express.static('public')); // for static resources
 
 /* Initializing all of the variables for the records pages */
 // array not used here, just for records
+/*
 var patients = [
 	["1","Bland","Kelly"],
-	["bd9s3nm32","Williams","Lana"],
-	["me983hc29","Kent","Tom"],
-	["jor921w2n","Smith","Don"],
-	["ut3923fj9","Jones","Sally"],
-	["p435fjh32","Nord","Lance"]
+	["2","Williams","Lana"],
+	["3","Kent","Tom"],
+	["4","Smith","Don"],
+	["5","Jones","Sally"],
+	["6","Nord","Lance"]
 ];
-
+*/
 // json below should be the same data as the above array
 
 var pat1 = {
@@ -61,31 +62,31 @@ var pat1 = {
 var pat2 = {
 	"firstName": "Lana",
 	"lastName": "Williams",
-	"id": "bd9s3nm32"
+	"id": "2"
 }
 
 var pat3 = {
 	"firstName": "Tom",
 	"lastName": "Kent",
-	"id": "me983hc29"
+	"id": "3"
 }
 
 var pat4 = {
 	"firstName": "Don",
 	"lastName": "Smith",
-	"id": "jor921w2n"
+	"id": "4"
 }
 
 var pat5 = {
 	"firstName": "Sally",
 	"lastName": "Jones",
-	"id": "ut3923fj9"
+	"id": "5"
 }
 
 var pat6 = {
 	"firstName": "Lance",
 	"lastName": "Nord",
-	"id": "p435fjh32"
+	"id": "6"
 }
 
 var recordsJSON = [
@@ -192,7 +193,7 @@ var dose3 = {
 }
 
 var dose4 = {
-  "patient_id"         :  "bd9s3nm32",
+  "patient_id"         :  "2",
   "dose"       :  "50mg",
   "medication" :  "Penicilin",
   "time"       :  "09:31",
@@ -201,7 +202,7 @@ var dose4 = {
 }
 
 var dose5 = {
-  "patient_id"         :  "me983hc29",
+  "patient_id"         :  "3",
   "dose"       :  "200mg",
   "medication" :  "Lisinoprol",
   "time"       :  "11:15",
@@ -210,7 +211,7 @@ var dose5 = {
 }
 
 var dose6 = {
-  "patient_id"     :  "me983hc29",
+  "patient_id"     :  "3",
   "dose"       :  "200mg",
   "medication" :  "Ibuprofen",
   "time"       :  "12:31",
@@ -219,7 +220,7 @@ var dose6 = {
 }
 
 var dose7 = {
-  "patient_id"     :  "jor921w2n",
+  "patient_id"     :  "4",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "06:10",
@@ -228,7 +229,7 @@ var dose7 = {
 }
 
 var dose8 = {
-  "patient_id"     :  "jor921w2n",
+  "patient_id"     :  "4",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "10:10",
@@ -237,7 +238,7 @@ var dose8 = {
 }
 
 var dose9 = {
-  "patient_id"     :  "jor921w2n",
+  "patient_id"     :  "4",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "14:10",
@@ -246,7 +247,7 @@ var dose9 = {
 }
 
 var dose10 = {
-  "patient_id"     :  "jor921w2n",
+  "patient_id"     :  "4",
   "dose"       :  "50mg",
   "medication" :  "Amoxicillin",
   "time"       :  "18:10",
@@ -255,7 +256,7 @@ var dose10 = {
 }
 
 var dose11 = {
-  "patient_id"     :  "ut3923fj9",
+  "patient_id"     :  "5",
   "dose"       :  "200mg",
   "medication" :  "Aspirin",
   "time"       :  "",
@@ -264,7 +265,7 @@ var dose11 = {
 }
 
 var dose12 = {
-  "patient_id"         :  "ut3923fj9",
+  "patient_id"         :  "5",
   "dose"       :  "200mg",
   "medication" :  "Aspirin",
   "time"       :  "",
@@ -273,7 +274,7 @@ var dose12 = {
 }
 
 var dose13 = {
-  "patient_id"     :  "p435fjh32",
+  "patient_id"     :  "6",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
@@ -282,7 +283,7 @@ var dose13 = {
 }
 
 var dose14 = {
-  "patient_id"     :  "p435fjh32",
+  "patient_id"     :  "6",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
@@ -291,7 +292,7 @@ var dose14 = {
 }
 
 var dose15 = {
-  "patient_id"     :  "p435fjh32",
+  "patient_id"     :  "6",
   "dose"       :  "100mg",
   "medication" :  "Ibuprofen",
   "time"       :  "",
@@ -300,35 +301,12 @@ var dose15 = {
 }
 
 //medInfoJSON = [dose1, dose2, dose3, dose4, dose5, dose6, dose7, dose8, dose9, dose10, dose11, dose12, dose13, dose14, dose15];
-var patientList = new Array();
-patientList.push('1'); //TODO: get patient ID from headers if not an admin user
 
-var medInfoJSON;
+//var patientList = new Array();
+//patientList.push('1'); //TODO: get patient ID from headers if not an admin user
 
-for (patient of patientList) {
-  const Http = new XMLHttpRequest();
-  var url = MEDICATION_API_URL + "/v2/medication/getByPatientId/" + patient;
-  Http.open("GET", url);
-  Http.send();
-  Http.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      medInfoJSON = JSON.parse(this.responseText);
-      console.log(medInfoJSON);
-    } else {
-      console.log("Error fetching patient " + patient + " from /getByPatientId");
-      console.log(url);
-    }
-  };
-}
 
-// as before, JSON should match the arrays. Just JSON. 
-/*
-var patientSolo = {
-  "firstName" : "Kelly",
-  "lastName"  : "Bland",
-  "id"        : "1"
-}
-*/
+
 //patInfo();
 //medication.forEach(medListGen);
 
@@ -401,15 +379,65 @@ app.get('/patients' , function(req, res) {
 
 });
 
+app.get('/patient/:patientID/add' , function(req, res) {
+
+  // get JSON from form
+  formJSON = req.body;
+
+  respJSON = {}; 
+  const Http = new XMLHttpRequest();
+    var url = MEDICATION_API_URL + "/v2/medication/" + patient;
+    Http.open("POST", url);
+    Http.send(formJSON);
+    Http.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        respJSON = JSON.parse(this.responseText);
+        console.log(respJSON);
+        context.results.push(respJSON); 
+      } else {
+        console.log("Error adding medication via POST to /medication");
+        console.log(url);
+      }
+    };
+
+
+  res.redirect('/patient/:patientID');
+});
+
 app.get('/patient/:patientID' , function(req, res) {
   var context = {};
   //context.patient = patientSolo; // not needed?
   context.results = [];
   // context is a JSON object w/ a results array
   sortID = req.params.patientID;
+
+  patientList = [];
+  patientList.push(sortID); 
+
+  var medInfoJSON;
+
+  for (patient of patientList) {
+    const Http = new XMLHttpRequest();
+    var url = MEDICATION_API_URL + "/v2/medication/getByPatientId/" + patient;
+    Http.open("GET", url);
+    Http.send();
+    Http.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        medInfoJSON = JSON.parse(this.responseText);
+        console.log(medInfoJSON);
+        context.results.push(medInfoJSON); 
+      } else {
+        console.log("Error fetching patient " + patient + " from /getByPatientId");
+        console.log(url);
+      }
+    };
+  }
+
+
   // iterates through all JSON for medication doses and pushes
   // those with matching patient_id into context.results
   //console.log("SortID = "+ sortID); 
+  /*
   for (var i in medInfoJSON)
   {
     console.log("comparing " + medInfoJSON[i].patient_id + " to " + sortID );
@@ -420,6 +448,7 @@ app.get('/patient/:patientID' , function(req, res) {
       //console.log("pushing... " + i); 
     }
   } 
+  */
   // renders it 
   res.render('patient', context);
 });
